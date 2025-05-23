@@ -162,6 +162,7 @@ class ContributionGraph extends AbstractChart<
     if (this.state.valueCache[index]) {
       if (this.state.valueCache[index].value) {
         const count = this.state.valueCache[index].value[this.props.accessor];
+        var colorIndex = this.state.valueCache[index].value[this.props.colorAccessor || "colorIndex"];
 
         if (count) {
           const opacity = mapValue(
@@ -172,7 +173,7 @@ class ContributionGraph extends AbstractChart<
             1
           );
 
-          return this.props.chartConfig.color(opacity);
+          return this.props.chartConfig.color(opacity, colorIndex);
         }
       }
     }
