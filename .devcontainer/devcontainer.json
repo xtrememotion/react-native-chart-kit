@@ -1,0 +1,9 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "features": {
+    "ghcr.io/tailscale/codespace/tailscale": {
+            "version": "latest"
+        },
+    "ghcr.io/devcontainers-extra/features/eas-cli:1": {}
+  }
+}
