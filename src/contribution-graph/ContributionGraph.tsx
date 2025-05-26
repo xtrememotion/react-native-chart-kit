@@ -162,12 +162,16 @@ class ContributionGraph extends AbstractChart<
     if (this.state.valueCache[index]) {
       if (this.state.valueCache[index].value) {
         const count = this.state.valueCache[index].value[this.props.accessor];
-        var colorIndex = this.state.valueCache[index].value[this.props.colorAccessor || "colorIndex"];
+        var colorIndex = this.state.valueCache[index].value[
+          this.props.colorAccessor || "colorIndex"
+        ];
 
         if (count) {
           const opacity = mapValue(
             count,
-            this.state.maxValue === this.state.minValue ? 0: this.state.minValue,
+            this.state.maxValue === this.state.minValue
+              ? 0
+              : this.state.minValue,
             isNaN(this.state.maxValue) ? 1 : this.state.maxValue,
             0.15 + 0.05, // + 0.05 to make smaller values a bit more visible
             1
@@ -361,6 +365,7 @@ class ContributionGraph extends AbstractChart<
     showMonthLabels: true,
     showOutOfRangeDays: false,
     accessor: "count",
+    colorAccessor: "colorIndex",
     classForValue: value => (value ? "black" : "#8cc665"),
     style: {}
   };
